@@ -1,8 +1,13 @@
 # UNet
 Medical Image Segmentation
 
+
+## To avoid ToTensor compress the value 0~1, using PILToTensor.
 ```
-To avoid ToTensor compress the value 0~1, using PILToTensor.
+mask_transform = transforms.Compose([
+    transforms.PILToTensor(),
+    transforms.Resize([800, 800], interpolation=Image.NEAREST),
+])
 ```
 
 
